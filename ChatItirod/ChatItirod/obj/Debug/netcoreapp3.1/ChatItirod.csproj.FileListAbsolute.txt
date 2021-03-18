@@ -1,0 +1,13 @@
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\bin\Debug\netcoreapp3.1\ChatItirod.exe
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\bin\Debug\netcoreapp3.1\ChatItirod.deps.json
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\bin\Debug\netcoreapp3.1\ChatItirod.runtimeconfig.json
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\bin\Debug\netcoreapp3.1\ChatItirod.runtimeconfig.dev.json
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\bin\Debug\netcoreapp3.1\ChatItirod.dll
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\bin\Debug\netcoreapp3.1\ChatItirod.pdb
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\obj\Debug\netcoreapp3.1\ChatItirod.csprojAssemblyReference.cache
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\obj\Debug\netcoreapp3.1\ChatItirod.AssemblyInfoInputs.cache
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\obj\Debug\netcoreapp3.1\ChatItirod.AssemblyInfo.cs
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\obj\Debug\netcoreapp3.1\ChatItirod.csproj.CoreCompileInputs.cache
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\obj\Debug\netcoreapp3.1\ChatItirod.dll
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\obj\Debug\netcoreapp3.1\ChatItirod.pdb
+C:\Users\gapan\source\repos\ChatItirod\ChatItirod\obj\Debug\netcoreapp3.1\ChatItirod.genruntimeconfig.cache
