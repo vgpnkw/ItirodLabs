@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -16,7 +17,7 @@ namespace UdpClientApp
         static List<int> indexes = new List<int>();
         static string username;
         static int index;
-        
+
 
         static void Main(string[] args)
         {
@@ -33,7 +34,7 @@ namespace UdpClientApp
 
                 Thread receiveThread = new Thread(new ThreadStart(ReceiveMessage));
                 receiveThread.Start();
-                SendMessage(); 
+                SendMessage();
             }
             catch (Exception ex)
             {
@@ -51,8 +52,9 @@ namespace UdpClientApp
                     message = String.Format("{0}: {1}", username, message);
                     byte[] data = Encoding.Unicode.GetBytes(message);
                     sender.Send(data, data.Length, remoteAddress, remotePort); // отправка
+                    if (index == 5) index++;
                     order.Add(index, message);
-                    index++;     
+                    index++;
                 }
             }
             catch (Exception ex)
@@ -75,8 +77,33 @@ namespace UdpClientApp
                 {
                     byte[] data = receiver.Receive(ref remoteIp); // получаем данные
                     string message = Encoding.Unicode.GetString(data);
+                    if (message.Contains(":"))
+                    {
+                        Chat();
+                    }
+                    else
+                    {
+                        int index = Int32.Parse(message);
+                        var resendMessages = order.Where(x => x.Key >= index);
+                        foreach (string letter in order.Values)
+                        {
+                            UdpClient sender = new UdpClient();
+                            try
+                            {
+                                byte[] newdata = Encoding.Unicode.GetBytes(letter);
+                                sender.Send(newdata, newdata.Length, remoteAddress, remotePort);    
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                            }
+                            finally
+                            {
+                                sender.Close();
+                            }
+                        }
 
-                    Chat();
+                    }
                 }
             }
             catch (Exception ex)
@@ -92,16 +119,33 @@ namespace UdpClientApp
         private static void Chat()
         {
             Console.Clear();
-            if(Check())
+            if (Check())
             {
                 foreach (var i in order)
                 {
                     Console.WriteLine(String.Format("{0}.{1}", i.Key, i.Value));
                 }
             }
-            
-
-
+            else
+            {
+                UdpClient sender = new UdpClient(); 
+                try
+                {
+                    string message = Console.ReadLine(); 
+                    message = String.Format("{0}", index);
+                    byte[] data = Encoding.Unicode.GetBytes(message);
+                    sender.Send(data, data.Length, remoteAddress, remotePort);
+                   
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    sender.Close();
+                }
+            }
         }
 
         private static bool Check()
@@ -109,11 +153,11 @@ namespace UdpClientApp
             indexes.Clear();
             foreach (var i in order.Keys)
             {
-                indexes.Add(i);        
+                indexes.Add(i);
             }
             if (indexes.Count > 1)
             {
-                if (indexes[indexes.Count -1] - indexes[indexes.Count-2] != 1)
+                if (indexes[indexes.Count - 1] - indexes[indexes.Count - 2] != 1)
                 {
                     Console.WriteLine("Сообщение утеряно!");
                     return false;
