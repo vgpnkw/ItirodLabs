@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\gapan\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\gapan\\.nuget\\packages"
+    ]
+  }
+}
