@@ -84,23 +84,20 @@ namespace UdpClientApp
                     else
                     {
                         int index = Int32.Parse(message);
-                        var resendMessages = order.Where(x => x.Key >= index);
-                        foreach (string letter in order.Values)
+                        string onlyLost = order.LastOrDefault(x => x.Key == index).Value;
+                        UdpClient sender = new UdpClient();
+                        try
                         {
-                            UdpClient sender = new UdpClient();
-                            try
-                            {
-                                byte[] newdata = Encoding.Unicode.GetBytes(letter);
-                                sender.Send(newdata, newdata.Length, remoteAddress, remotePort);    
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.Message);
-                            }
-                            finally
-                            {
-                                sender.Close();
-                            }
+                            byte[] newdata = Encoding.Unicode.GetBytes(onlyLost);
+                            sender.Send(newdata, newdata.Length, remoteAddress, remotePort);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                        finally
+                        {
+                            sender.Close();
                         }
 
                     }
@@ -128,14 +125,14 @@ namespace UdpClientApp
             }
             else
             {
-                UdpClient sender = new UdpClient(); 
+                UdpClient sender = new UdpClient();
                 try
                 {
-                    string message = Console.ReadLine(); 
+                    string message = Console.ReadLine();
                     message = String.Format("{0}", index);
                     byte[] data = Encoding.Unicode.GetBytes(message);
                     sender.Send(data, data.Length, remoteAddress, remotePort);
-                   
+
                 }
                 catch (Exception ex)
                 {
@@ -165,9 +162,6 @@ namespace UdpClientApp
                 else return true;
             }
             else return true;
-
-
-
         }
 
     }
