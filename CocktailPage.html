@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>Cocktail page</title>
+</head>
+<body> 
+    <div class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="./index.html" class="header__logo">
+                    Cocktail Database
+                </a>
+                <div class="header__search">
+                    <form method="GET">
+                      <input type="text" class="search" name="Search" placeholder="Search">
+                      <input type="submit" value="Search" class="btn" />
+                    </form>
+                </div>
+                <nav>
+                    <a class="nav__link" href="./LoginPage.html">Login</a>
+                    <a class="nav__link" href="./RegisterPage.html">Register</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="container">
+            <div class="col-1-3">
+                <div class="cocktail-photo">
+                    <img src="./glass.png" alt="">
+                </div>
+                <div class="rating-result">
+                    <span class="active"></span>	
+                    <span class="active"></span>    
+                    <span class="active"></span>  
+                    <span></span>    
+                    <span></span>
+                </div>
+            </div>
+            <div class="col-1-3">
+                <h2>Cocktail Name</h2>
+                <p>Decription</p>
+                <p>Reciepe</p>
+                <h3>Creator</h3>
+            </div>
+            <div class="col-1-3">
+                <ul class="comments clearfix">
+                    <li class="comment">
+                        <h2>
+                            Reviwers Name:
+                        </h2>
+                        <h2>
+                            Review
+                        </h2>
+                    </li>
+                    <li class="comment">
+                        <h2>
+                            Reviwers Name:
+                        </h2>
+                        <h2>
+                            Review
+                        </h2>
+                    </li>
+                </ul>
+            </div>
+            <form method="post">
+                <textarea class="main__link" type="text" placeholder="Enter comment"></textarea>
+                <input class="main__link" type="submit" value="Send">
+            </form>
+            <nav>
+                <a class="main__link" href="./EditPage.html">Edit Cocktail</a>
+                <a class="main__link" href="#">Delete Cocktail</a>
+            </nav>
+        </div>
+    </main>
+    <footer class="footer">
+		<p>CocktailDatabase 2021. Gapankov Vitaly</p>
+	</footer>
+</body>
+</html>

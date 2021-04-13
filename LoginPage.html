@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>Login page</title>
+</head>
+<body> 
+    <div class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="./index.html" class="header__logo">
+                    Cocktail Database
+                </a>
+                <div class="header__search">
+                    <form method="GET">
+                      <input type="text" class="search" name="Search" placeholder="Search">
+                      <input type="submit" value="Search" class="btn" />
+                    </form>
+                </div>
+                <nav>
+                    <a class="nav__link" href="./LoginPage.html">Login</a>
+                    <a class="nav__link" href="./RegisterPage.html">Register</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <form class="form__auth" method="post">
+            <input  type="text" id="login" name="login" placeholder="Login">
+            <input  type="password" id="password" name="password" placeholder="Password" required>
+            <input  type="submit" value="Login">
+        </form>         
+    </main>
+    <footer class="footer">
+		<p>CocktailDatabase 2021. Gapankov Vitaly</p>
+	</footer>
+</body>
+</html>
