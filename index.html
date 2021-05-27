@@ -12,13 +12,13 @@
     <div class="header">
         <div class="container">
             <div class="header__inner">
-                <a href="./index.html" class="header__logo">
+                <a href="./index.html" onclick="searching(1)"   class="header__logo">
                     Cocktail Database
                 </a>
                 <div class="header__search">
-                    <form method="GET">
-                      <input type="text" class="search" name="Search" placeholder="Искать здесь...">
-                      <input type="submit" value="Search"/>
+                    <form>
+                      <input id="search" type="text" class="search" name="Search" placeholder="Искать здесь...">
+                      <input onclick="searching(0)" type="submit"  value="Search"/>
                     </form>
                 </div>
                 <nav id="main_nav">
@@ -30,7 +30,7 @@
     <main class="main">
         <div id="container" class="container">
             <nav>
-                <a class="main__link" href="./EditPage.html">New Cocktail</a>
+                <a  class="main__link" onclick="searching(1)"  href="./EditPage.html">New Cocktail</a>
             </nav>
             <!-- <ul id="cocktails" class="cocktails clearfix"> -->
                 <!-- 

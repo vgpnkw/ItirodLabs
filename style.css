@@ -98,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 25vh;
     min-width: 100px;
     min-height: 40px;
+    cursor: pointer;
 }
 
 .form__auth{
@@ -482,6 +483,48 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+.rating-area {
+	width: 200px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 35px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 25px;
+	line-height: 1px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}
+
+
+
 .ingredients {
     margin-top: 20px;
   }
@@ -493,10 +536,10 @@ margin-bottom: 5px;
 
 .cocktail-ingredient {
     position: absolute;
-    left: 106px;
-    top: 32px;
-    height: 140px;
-    width: 95px;
+    left: 77px;
+    top: 34px;
+    height: 136px;
+    width: 104px;
     z-index: 1px;
     border-radius: 10px;
     background-color: #324b4e;

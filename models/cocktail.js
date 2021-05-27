@@ -6,7 +6,7 @@ class Cocktail {
       this.addedBy = addedBy;
       this.ingredients = ingredients;
       this.createDate = new Date();
-      this.marks = [];
+      this.rating = 1;
       this.comments = [];
     }
   }

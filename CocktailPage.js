@@ -1,3 +1,8 @@
+let cock_rating;
+function setRating(button) {
+  cock_rating = button.value;
+  
+}
 async function startSettingInfo(id) {
 
   cocktailsList = JSON.parse(localStorage.getItem("cocktailsList"));
@@ -26,6 +31,7 @@ function setInfo(cocktail) {
   populateIngredients(cocktail);
 
   populateComments(cocktail);
+  createCoffeeRating(cocktail)
 }
 
 function populateIngredients(cocktail) {
@@ -79,6 +85,12 @@ function populateComments(cocktail) {
   
 }
 
+function createCoffeeRating(cocktail) {
+  let cocktailRating = document.getElementsByName("rating");
+  cocktailRating[5 - cocktail.rating].checked = true;
+  return cocktailRating;
+}
+
 function createCoffeeTitle(cocktail) {
   let cocktailName = document.getElementById("cocktail_name");
   cocktailName.textContent = cocktail.name.toUpperCase();
@@ -119,6 +131,20 @@ async function removeCocktail() {
   let id = JSON.parse(localStorage.getItem("current_id"))
   cocktailsList = JSON.parse(localStorage.getItem("cocktailsList"));
   cocktailsList.splice(id, 1);
+  localStorage.setItem("cocktailsList", JSON.stringify(cocktailsList));
+  window.location.href = "index.html"
+}
+
+
+async function saveRating() {
+  let id = JSON.parse(localStorage.getItem("current_id"))
+  cocktailsList = JSON.parse(localStorage.getItem("cocktailsList"));
+  if(cock_rating > 0){
+    cocktailsList[id].rating = cock_rating
+  } else {
+    cocktailsList[id].rating = 1
+  }
+  
   localStorage.setItem("cocktailsList", JSON.stringify(cocktailsList));
   window.location.href = "index.html"
 }

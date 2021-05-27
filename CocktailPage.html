@@ -37,14 +37,20 @@
                 <!-- <div class="cocktail-photo">
                     
                 </div> -->
-                <div class="rating-result">
-                    <span class="active"></span>	
-                    <span class="active"></span>    
-                    <span class="active"></span>  
-                    <span></span>    
-                    <span></span>
+                <div class="rating-area">
+                    <input class="star-input" type="radio" id="star-5" name="rating" value="5" onclick="setRating(this)">
+                    <label for="star-5" title="Оценка «5»"></label>	
+                    <input class="star-input" type="radio" id="star-4" name="rating" value="4" onclick="setRating(this)">
+                    <label for="star-4" title="Оценка «4»"></label>    
+                    <input class="star-input" type="radio" id="star-3" name="rating" value="3" onclick="setRating(this)">
+                    <label for="star-3" title="Оценка «3»"></label>  
+                    <input class="star-input" type="radio" id="star-2" name="rating" value="2" onclick="setRating(this)">
+                    <label for="star-2" title="Оценка «2»"></label>    
+                    <input class="star-input" type="radio" id="star-1" name="rating" value="1" onclick="setRating(this)">
+                    <label for="star-1" title="Оценка «1»"></label>
                 </div>
             </div>
+            
             <div class="col-1-3">
                 <h2 id="cocktail_name">Cocktail Name</h2>
                 <p class="descr" id="cocktail_decription">Decription</p>
@@ -63,6 +69,7 @@
             <nav>
                 <!-- <a class="main__link" href="./EditPage.html">Edit Cocktail</a> -->
                 <a class="main__link" onclick="removeCocktail()">Delete Cocktail</a>
+                <a class="main__link" onclick="saveRating()">Save rating</a>
             </nav>
         </div>
     </main>

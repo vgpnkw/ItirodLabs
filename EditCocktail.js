@@ -1,3 +1,12 @@
+let rating
+function setRating(button) {
+  rating = button.value;
+  
+}
+
+
+
+
 function more() {
   let ingredientListItem =
   `<select class="main__link" name="ingredients-select" onchange="changeImage()">
@@ -113,7 +122,7 @@ async function submitForm() {
   cocktailsList = JSON.parse(localStorage.getItem("cocktailsList"));
   let id = cocktailsList[cocktailsList.length - 1].id + 1 || 0
   let cocktail = new Cocktail(name.trim().toLowerCase(), user, description, ingredientsList, id);
-  
+  cocktail.rating = rating
   cocktailsList.push(cocktail)
 
   localStorage.setItem("cocktailsList", JSON.stringify(cocktailsList));
@@ -134,3 +143,5 @@ async function validateInput(name, description) {
   return true;
   
 }
+
+
