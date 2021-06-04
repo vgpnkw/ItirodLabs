@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>Main Page</title>
+    <script type="text/javascript" src="./picture-creator2.js"></script>
+</head>
+<body> 
+    <div class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="./index.html" onclick="searching(1)"   class="header__logo">
+                    Cocktail Database
+                </a>
+                <div class="header__search">
+                    <form>
+                      <input id="search" type="text" class="search" name="Search" placeholder="Искать здесь...">
+                      <input onclick="searching(0)" type="submit"  value="Search"/>
+                    </form>
+                </div>
+                <nav id="main_nav">
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div id="container" class="container">
+            <nav>
+                <a  class="main__link" onclick="searching(1)"  href="./EditPage.html">New Cocktail</a>
+            </nav>
+          
+        </div>
+    </main>
+    <footer class="footer">
+		<p>CocktailDatabase 2021. Gapankov Vitaly</p>
+	</footer>
+    <script src="./models/user.js"></script>
+    <script src="./models/ingredient.js"></script>
+    <script src="./models/cocktail.js"></script>
+    <script type="text/javascript" src="./MainPage.js"></script>
+</body>
+</html>

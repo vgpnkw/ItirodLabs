@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>Cocktail page</title>
+    <script type="text/javascript" src="./models/storage.js"></script>
+    <script type="text/javascript" src="./picture-creator2.js"></script>
+    <script type="text/javascript" src="./models/comment.js"></script>
+</head>
+<body> 
+    <div class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="./index.html" class="header__logo">
+                    Cocktail Database
+                </a>
+                <div class="header__search">
+                    <form method="GET">
+                      <input type="text" class="search" name="Search" placeholder="Search">
+                      <input type="submit" value="Search" class="btn" />
+                    </form>
+                </div>
+                   <nav id="main_nav">
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+    <main class="main">
+        <div class="container">
+            <div class="col-1-3">
+                <!-- <div class="cocktail-photo">
+                    
+                </div> -->
+                <div class="rating-area">
+                    <input class="star-input" type="radio" id="star-5" name="rating" value="5" onclick="setRating(this)">
+                    <label for="star-5" title="Оценка «5»"></label>	
+                    <input class="star-input" type="radio" id="star-4" name="rating" value="4" onclick="setRating(this)">
+                    <label for="star-4" title="Оценка «4»"></label>    
+                    <input class="star-input" type="radio" id="star-3" name="rating" value="3" onclick="setRating(this)">
+                    <label for="star-3" title="Оценка «3»"></label>  
+                    <input class="star-input" type="radio" id="star-2" name="rating" value="2" onclick="setRating(this)">
+                    <label for="star-2" title="Оценка «2»"></label>    
+                    <input class="star-input" type="radio" id="star-1" name="rating" value="1" onclick="setRating(this)">
+                    <label for="star-1" title="Оценка «1»"></label>
+                </div>
+            </div>
+            
+            <div class="col-1-3">
+                <h2 id="cocktail_name">Cocktail Name</h2>
+                <p class="descr" id="cocktail_decription">Decription</p>
+                <p id="reciepe"></p>
+                <h3 id="added_by">Creator</h3>
+            </div>
+            <div class="col-2-3">
+                <ul class="comments clearfix">
+                    
+                </ul>
+            </div>
+            <form method="post" onsubmit="leaveComment(); return false;" >
+                <textarea id="comment-input" class="main__link" type="text" placeholder="Enter comment"></textarea>
+                <button class="main__link">Send</button>
+            </form>
+            <nav>
+                <!-- <a class="main__link" href="./EditPage.html">Edit Cocktail</a> -->
+                <button class="main__link" onclick="removeCocktail()">Delete Cocktail</button>
+                <button class="main__link" onclick="saveRating()">Save rating</button> 
+            </nav>
+        </div>
+    </main>
+    <footer class="footer">
+		<p>CocktailDatabase 2021. Gapankov Vitaly</p>
+	</footer>
+	
+    <script type="text/javascript" src="./CocktailPage.js"></script>
+</body>
+</html>
