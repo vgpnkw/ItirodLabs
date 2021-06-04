@@ -22,7 +22,7 @@ async function startSettingInfo(id) {
 
 function setInfo(cocktail) {
   let pictureInfoDiv = document.querySelector('.col-1-3');
-  pictureInfoDiv.prepend(createCoffeeImageDiv(cocktail));
+  pictureInfoDiv.prepend(createCoffeeImageDiv(cocktail, true));
   
   createCoffeeTitle(cocktail)
   createCoffeeDescription(cocktail)

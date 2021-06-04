@@ -75,7 +75,10 @@ function changeImage() {
       let value = ingredientsValues[i].value;
       if (value != "") {
         let ingredientDiv = document.createElement("div");
-        ingredientDiv.classList.add('cocktail-ingredient');
+       if(screen.width <=500 )
+      { ingredientDiv.classList.add('cocktail-ingredient2')}
+      else{ ingredientDiv.classList.add('cocktail-ingredient');}
+      
         ingredientDiv.classList.add(ingredientsSelects[i].options[ingredientsSelects[i].selectedIndex].value);
         ingredientDiv.setAttribute('style', getIngredientStyleString(100 - sumOfValues | 0));
         sumOfValues -= value;

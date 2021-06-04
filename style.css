@@ -23,13 +23,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
 }
 
-@media (max-width: 1200px){
-    .container {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 1200px;
-    }    
-}
+
 
 /*header*/
 .header {
@@ -45,6 +39,11 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom-left-radius: 25px;
     border-bottom-color: #3E97D1;
 }
+@media only screen and (max-device-width: 500px) {
+	.header {
+		height: 400px;
+	}
+}
 
 .header__inner {
     font-family: 'Dancing Script', cursive;
@@ -53,20 +52,41 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+@media only screen and (max-device-width: 500px) {
+	.header__inner {
+		 height: 200px;
+		  display:block;
+		  align-items:center;
+		  text-align:center;
+	}
+}
+
+
 .header__logo {
     font-size: 30px;
     font-weight: 700;
     text-decoration: none;
     color: black;
 }
+@media only screen and (max-device-width: 500px) {
+	.header__logo {
+		 font-size: 60px;
+	}
+}
 
 .header__search:after {content:""; clear:both; display:table}
 
 .header__search form {
-  width: auto;
+  width: 500px;
   display: inline-block;
   margin-right: 30px;
 }
+@media only screen and (max-device-width: 500px) {
+	.header__search form {
+		 width: 600px;
+	}
+}
+
 
 .header__search input {
   width: 150px;
@@ -78,6 +98,13 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   position: relative;
   transition: .2s linear;
+}
+@media only screen and (max-device-width: 500px) {
+	.header__search input {
+		 width: 500px;
+		 height: 80px;
+		 font-size:30px
+	}
 }
 
 .header__search input:focus {
@@ -107,11 +134,22 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 100px;
     min-height: 40px;
     cursor: pointer;
+    
+}
+@media only screen and (max-device-width: 500px) {
+	.main__link {
+		  min-width: 300px;
+                  min-height: 120px;
+                  font-size:30px;
+                  text-align:center;
+                  margin-left:50px;
+      
+	}
 }
 
 .form__auth{
     border: 1px solid #3E97D1;
-    border-radius: 35px;
+	border-radius: 35px;
     padding: 10px;
     margin: 20px;
     background-color:#F5F5F6  ;
@@ -125,7 +163,20 @@ h1, h2, h3, h4, h5, h6 {
     margin: 20px 60px 20px 60px;
     padding: 10px;
     border: 1px solid #3E97D1;
-    border-radius: 35px;
+	border-radius: 35px;
+}
+@media only screen and (max-device-width: 500px) {
+       .form__auth  {
+                  
+                  height: 800px;
+      
+	}
+	.form__auth input{
+                  font-size:30px;
+                  width: 80%;
+                  height: 20%;
+      
+	}
 }
 
 .form__auth input[type=submit] {
@@ -134,15 +185,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main_buttons {
-    width: 100%;
-    display:inline-block;
+	width: 100%;
+	display:inline-block;
     vertical-align:top;
     margin-right: -4px;
 }
 
 .cocktail-wrapper {
-    /* width: 25%;
-    display:inline-block;
+	/* width: 25%;
+	display:inline-block;
     vertical-align:top;
     margin-right: -4px; */
     height: 220px;
@@ -158,25 +209,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cocktail {
-    display: block;
-    border: 1px solid #3E97D1;
-    border-radius: 35px;
-    position: relative;
-    margin: 0 20px 20px 0;
+	display: block;
+	border: 1px solid #3E97D1;
+	border-radius: 35px;
+	position: relative;
+	margin: 0 20px 20px 0;
     text-align: center;
-    text-decoration: none;
-    color: #474747;
-    z-index: 0;
+	text-decoration: none;
+	color: #474747;
+	z-index: 0;
     width: 300px;
-    height: 300px;
+	height: 300px;
     background-color:#F5F5F6 ;
     
 }
 
+
+
+
 .cocktails {
-    /* list-style: none;
-    margin: 0 -20px 0 0;
-    padding: 0; */
+	/* list-style: none;
+	margin: 0 -20px 0 0;
+	padding: 0; */
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, 300px);
@@ -186,68 +240,42 @@ h1, h2, h3, h4, h5, h6 {
     /* padding: 0 30px; */
 }
 
-.cocktail-photo {
-    position: relative;
-    padding-bottom: 70%;
-    overflow: hidden;
-    z-index: 2px;
+@media only screen and (max-device-width: 500px) {
+	.cocktails {
+		  margin-top:60px;
+		  font-size:20px;
+	}
 }
 
 
-
+.cocktail-photo {
+	position: relative;
+	padding-bottom: 70%;
+	
+        z-index: 2px;
+}
 .cocktail-photo img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 70%;
-    max-height: 70%;
-    margin: auto;
-    transition: transform .2s ease-out;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	max-width: 70%;
+	max-height: 70%;
+	margin: auto;
+	transition: transform .2s ease-out;
     
 }
 
 .cocktail h2 {
-    position: relative;
-    margin: 0;
-    font-size: 1em;
-    line-height: 1.4em;
-    height: 5.6em;
-    overflow: hidden;
+	position: relative;
+	margin: 0;
+	font-size: 1em;
+	line-height: 1.4em;
+	height: 5.6em;
+	overflow: hidden;
 }
 
-/* .cocktail h2:after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 4.2em;
-    height: 1.6em;
-    background: linear-gradient(to left top, #fff, rgba(255, 255, 255, 0));
-} */
-/* .cocktail:hover .product-photo img {
-    transform: scale(1.05);
-}
-
-@media only screen and (min-width: 450px) {
-    .cocktail-wrapper {
-        width: 50%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .cocktail-wrapper {
-        width: 33.333%;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .cocktail-wrapper {
-        width: 25%;
-    }
-} */
 
 .col-1-3 {
     width: 300px;
@@ -255,14 +283,14 @@ h1, h2, h3, h4, h5, h6 {
     vertical-align:top;
     margin-right: -4px;
     border: 1px solid #3E97D1;
-    border-radius: 35px;
-    position: relative;
-    background: #fff;
-    margin: 0 20px 20px 0;
+	border-radius: 35px;
+	position: relative;
+	background: #fff;
+	margin: 0 20px 20px 0;
     text-align: center;
-    text-decoration: none;
-    color: #333;
-    height: 350px;
+	text-decoration: none;
+	color: #333;
+	height: 350px;
     background-color:#F5F5F6  ;
 }
 
@@ -272,37 +300,42 @@ h1, h2, h3, h4, h5, h6 {
     vertical-align:top;
     margin-right: -4px;
     border: 1px solid #3E97D1;
-    border-radius: 15px;
-    position: relative;
-    background: #fff;
-    margin: 0 20px 20px 0;
+	border-radius: 15px;
+	position: relative;
+	background: #fff;
+	margin: 0 20px 20px 0;
     text-align: center;
-    text-decoration: none;
-    color: #333;
-    height: 350px;
+	text-decoration: none;
+	color: #333;
+	height: 350px;
     background-color:#F5F5F6  ;
 }
 .col-1-3 textarea input{
     max-width: 80%;
     max-height: 25vh;
 }
-/* @media only screen and (min-width: 450px) {
-    .col-1-3 {
-        width: 600px;
-    }
+@media only screen and (max-device-width: 500px) {
+	.col-1-3  {
+	          margin-left:100px;
+                  width: 80%;
+                  height:800px
+      		  
+	}
+	.col-1-3 h2, h3, p {
+      		  font-size:50px
+	}
+	
 }
 
-@media only screen and (min-width: 768px) {
-    .col-1-3 {
-        width: 500px;
-    }
+@media only screen and (max-device-width: 500px) {
+	.col-2-3  {
+	          margin-left:100px;
+                  width: 80%;
+                  height:800px
+      		  
+	}
+	
 }
-
-@media only screen and (min-width: 1000px) {
-    .col-1-3 {
-        width: 300px;
-    }
-} */
 
 .comments{
     list-style: none;
@@ -311,15 +344,15 @@ h1, h2, h3, h4, h5, h6 {
     overflow:auto; 
 }
 .comment {
-    /* display: block;
-    position: relative;
-    background: #fff;
-    margin: 0 20px 20px 0;
+	/* display: block;
+	position: relative;
+	background: #fff;
+	margin: 0 20px 20px 0;
     text-align: center;
-    text-decoration: none;
-    color: #474747;
-    z-index: 0;
-    height: 300px;
+	text-decoration: none;
+	color: #474747;
+	z-index: 0;
+	height: 300px;
     background-color:cornsilk ; */
 
 
@@ -331,11 +364,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .comment h2 {
-    
-    margin: 0;
-    font-size: 1em;
-    line-height: 1.4em;
-    overflow: hidden;
+	
+	margin: 0;
+	font-size: 1em;
+	line-height: 1.4em;
+	overflow: hidden;
 }
 
 .comment p {
@@ -343,8 +376,24 @@ h1, h2, h3, h4, h5, h6 {
     width: 300px;
     height: 50px;
     border: 1px dashed #000;
-    border-radius: 35px;
+	border-radius: 35px;
     overflow:auto;  
+}
+
+@media only screen and (max-device-width: 500px) {
+	.comment p  {
+                  width: 50%;
+                  height: 30%;
+                  border: 3px dashed #000;
+                  
+      		  
+	}
+	.comment h2  {
+                 font-size:50px
+                  
+      		  
+	}
+	
 }
 
 .descr{
@@ -352,35 +401,51 @@ h1, h2, h3, h4, h5, h6 {
     width: 200px;
     height: 50px;
     border: 1px dashed #000;
-    border-radius: 35px;
+	border-radius: 35px;
     overflow:auto;  
     margin-left: 50px;
 }
-.comments input {    
-    margin: 0 20px 0px 0px;
+
+@media only screen and (max-device-width: 500px) {
+	.descr  {
+	           width: 90%;
+   		   height: 20%;
+      		  
+	}
+	
+	
 }
-.comments li {    
-    margin: 0;
+.comments input {	
+	margin: 0 20px 0px 0px;
+}
+.comments li {	
+	margin: 0;
 }
 
 /*Footer*/
 .footer{
-    height: 50px;
+    height: 60px;
     text-align: center;
     background-color:#4B4F56 ;
     border-top-color: #3E97D1;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     margin: 0;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+   left:0;
+   bottom:0;
+    position:fixed;
+    width:100%;
 }
 .footer p {
     padding-top: 20px;
     margin: auto;
     color: white;
+}
+
+@media only screen and (max-device-width: 500px) {
+	.footer p {
+		font-size: 30px;
+	}
 }
 
 
@@ -398,6 +463,11 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     transition: color .2s linear;
     position: relative;
+}
+@media only screen and (max-device-width: 500px) {
+	.nav__link {
+		font-size: 50px;
+	}
 }
 
 .nav__link:after {
@@ -422,32 +492,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav__link:hover:after {
     opacity: 1;
 }
-@media only screen and (min-width: 450px) {
-    .nav__link {
-        width: 50%;
-    }
-    .nav {
-        font-size: 40px;
-    }
-}
 
-@media only screen and (min-width: 768px) {
-    .nav__link {
-        width: 33.333%;
-    }
-    .nav {
-        font-size: 30px;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .nav__link {
-        width: 25%;
-    }
-    .nav {
-        font-size: 15px;
-    }
-}
 
 
 
@@ -477,65 +522,86 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Rating*/
 .rating-result {
-    width: 200px;
-    margin: 0 auto;
+	width: 200px;
+	margin: 0 auto;
 }
+
 .rating-result span {
-    padding: 0;
-    font-size: 25px;
-    margin: 0 2px;
-    line-height: 1;
-    color: lightgrey;
+	padding: 0;
+	font-size: 25px;
+	margin: 0 2px;
+	line-height: 1;
+	color: lightgrey;
 
 }
+@media only screen and (max-device-width: 500px) {
+	.rating-result span  {
+                  font-size:35px;
+      
+	}
+}
 .rating-result > span:before {
-    content: '★';
+	content: '★';
 }
 .rating-result > span.active {
-    color: gold;
-    text-shadow: 1px 1px #c60;
+	color: gold;
+	text-shadow: 1px 1px #c60;
 }
 
 
 
 .rating-area {
-    width: 200px;
-    margin: 0 auto;
+	width: 200px;
+	margin: 0 auto;
 }
+
 .rating-area:not(:checked) > input {
-    display: none;
+	display: none;
 }
 .rating-area:not(:checked) > label {
-    float: right;
-    width: 35px;
-    padding: 0;
-    cursor: pointer;
-    font-size: 25px;
-    line-height: 1px;
-    color: lightgrey;
-    text-shadow: 1px 1px #bbb;
+	float: right;
+	width: 35px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 25px;
+	line-height: 1px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+@media only screen and (max-device-width: 500px) {
+	.rating-area{
+                 width: 400px;
+      
+	}
+}
+@media only screen and (max-device-width: 500px) {
+	.rating-area:not(:checked) > label {
+	        width: 80px;
+                 font-size: 80px;
+      
+	}
 }
 .rating-area:not(:checked) > label:before {
-    content: '★';
+	content: '★';
 }
 .rating-area > input:checked ~ label {
-    color: gold;
-    text-shadow: 1px 1px #c60;
+	color: gold;
+	text-shadow: 1px 1px #c60;
 }
 .rating-area:not(:checked) > label:hover,
 .rating-area:not(:checked) > label:hover ~ label {
-    color: gold;
+	color: gold;
 }
 .rating-area > input:checked + label:hover,
 .rating-area > input:checked + label:hover ~ label,
 .rating-area > input:checked ~ label:hover,
 .rating-area > input:checked ~ label:hover ~ label,
 .rating-area > label:hover ~ input:checked ~ label {
-    color: gold;
-    text-shadow: 1px 1px goldenrod;
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
 }
 .rate-area > label:active {
-    position: relative;
+	position: relative;
 }
 
 
@@ -559,6 +625,19 @@ margin-bottom: 5px;
     border-radius: 10px;
     background-color: #324b4e;
   }
+  
+  .cocktail-ingredient2 {
+    position: absolute;
+    left: 220px;
+    top: 110px;
+    width: 250px;
+    height: 320px;
+    z-index: 1px;
+    border-radius: 10px;
+    background-color: #324b4e;
+  }
+  
+
 
   .milk {
     background-color: #E6E6E6;
@@ -579,47 +658,3 @@ margin-bottom: 5px;
   .big_milk {
     background-color: #FF7100;
   }
-
-
-@media only screen
-    and (max-device-width : 500px) {
-
-    :root {
-      --main-border-radius: 50px;
-    }
-
-    .container1{
-        position: absolute;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: -25px 0 0 -25px;
-    }
-
-    .col-2-3{
-        width: 100%;
-        right: 10%;
-    }
-
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .header{
-        position: fixed;
-        width: 100%;
-    }
-
-    .main{
-        padding-top: 100px;
-    }
-
-
-
-
-
-}

@@ -3,7 +3,7 @@ function getIngredientStyleString(value) {
     -webkit-clip-path: polygon(0 ${value}%, 100% ${value}%, 100% 100%, 0% 100%);`;
   }
   
-  function createCoffeeImageDiv(cocktail) {
+  function createCoffeeImageDiv(cocktail , yes) {
     let coffeeImageDiv = document.createElement("div");
     coffeeImageDiv.classList.add('cocktail-photo');
   
@@ -20,7 +20,10 @@ function getIngredientStyleString(value) {
   
     for (let ingredient of cocktail.ingredients) {
       let ingredientDiv = document.createElement("div");
-      ingredientDiv.classList.add('cocktail-ingredient');
+      if(screen.width <=500 && yes)
+      { ingredientDiv.classList.add('cocktail-ingredient2')}
+      else{ ingredientDiv.classList.add('cocktail-ingredient');}
+     
       ingredientDiv.classList.add(ingredient.name);
       ingredientDiv.setAttribute('style', getIngredientStyleString(100 - sumOfValues | 0));
       sumOfValues -= ingredient.value;
