@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media only screen and (max-device-width: 500px) {
 	.main__link {
-		  min-width: 300px;
+		  min-width: 200px;
                   min-height: 120px;
                   font-size:30px;
                   text-align:center;
@@ -343,6 +343,15 @@ h1, h2, h3, h4, h5, h6 {
     height: 350px;
     overflow:auto; 
 }
+
+@media only screen and (max-device-width: 500px) {
+	.comments  {
+	        height: 700px;
+      		  
+	}
+	
+}
+
 .comment {
 	/* display: block;
 	position: relative;
@@ -381,6 +390,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media only screen and (max-device-width: 500px) {
+	
 	.comment p  {
                   width: 50%;
                   height: 30%;

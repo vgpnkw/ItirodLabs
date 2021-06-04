@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Chango&family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="./style.css" type="text/css" rel="stylesheet">
     <title>Edit page</title>
-    <script type="text/javascript" src="./EditCocktail.js"></script>
+
     <script type="text/javascript" src="./models/storage.js"></script>
     <script type="text/javascript" src="./models/cocktail.js"></script>
     <script type="text/javascript" src="./models/ingredient.js"></script>
@@ -25,9 +25,8 @@
                       <input type="submit" value="Search" class="btn" />
                     </form>
                 </div>
-                <nav>
-                    <a class="nav__link" href="./LoginPage.html">Login</a>
-                    <a class="nav__link" href="./RegisterPage.html">Register</a>
+                <nav id="main_nav">
+                    
                 </nav>
             </div>
         </div>
@@ -64,7 +63,7 @@
                             <option value="ice_cream">Мороженное</option>
                             <option value="big_milk">Сливки</option>
                             <option value="ice">Лёд</option>
-                            <option value="milk">Молоко</option>
+                            <option value="milk">Молоко</option>23:01 04.06.2021
                             <option value="pena">Пенка</option>
                         </select>
                         <input id="input"  class="main__link" type="number" name="ingredient-value" value="" placeholder="%" oninput="changeImage();" required>
@@ -81,5 +80,7 @@
     <footer class="footer">
 		<p>CocktailDatabase 2021. Gapankov Vitaly</p>
 	</footer>
+	 <script src="./models/user.js"></script>
+	  <script type="text/javascript" src="./EditCocktail.js"></script>
 </body>
 </html>

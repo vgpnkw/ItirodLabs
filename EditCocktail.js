@@ -147,4 +147,42 @@ async function validateInput(name, description) {
   
 }
 
+function auth(){
+  nav = document.getElementById("main_nav")
+  let user = JSON.parse(localStorage.getItem("current_user"))
+
+  if(user === "none") {
+
+    let a = document.createElement("a")
+    a.textContent = "Login"
+    a.href = "LoginPage.html"
+    a.className = "nav__link"
+    nav.appendChild(a)
+    a = document.createElement("a")
+    a.textContent = "Register"
+    a.href = "RegisterPage.html"
+    a.className = "nav__link"
+    nav.appendChild(a)
+
+  } else {
+
+      let a = document.createElement("a")
+      a.textContent = "Hello " + `${user}`
+      a.style.color = "black"
+      a.className = "nav__link"
+       a.href = "index.html"
+      nav.appendChild(a)
+      a = document.createElement("a")
+      a.textContent = "Logout"
+      a.href = "index.html"
+      a.className = "nav__link"
+      a.onclick = logout
+      nav.appendChild(a)
+
+  }
+}
+function logout(){
+  localStorage.setItem("current_user", JSON.stringify("none"));
+}
+auth()
 

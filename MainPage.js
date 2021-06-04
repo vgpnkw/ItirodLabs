@@ -97,6 +97,8 @@ function auth(){
       let a = document.createElement("a")
       a.textContent = "Hello " + `${user}`
       a.style.color = "black"
+      a.className = "nav__link"
+      a.href = "index.html"
       nav.appendChild(a)
       a = document.createElement("a")
       a.textContent = "Logout"
